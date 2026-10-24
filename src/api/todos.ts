@@ -2,21 +2,7 @@ import { Todo } from '../types/Todo';
 
 const BASE_URL = 'https://mate.academy/students-api';
 
-export const getUserId = (): number | undefined => {
-  const storedUser = localStorage.getItem('user');
-
-  if (!storedUser) {
-    return undefined;
-  }
-
-  try {
-    return JSON.parse(storedUser).id;
-  } catch {
-    return undefined;
-  }
-};
-
-export const USER_ID: number = getUserId() ?? 4548;
+export const USER_ID = 4548;
 
 const wait = (delay: number) =>
   new Promise(resolve => setTimeout(resolve, delay));
